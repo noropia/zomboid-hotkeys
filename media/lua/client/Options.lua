@@ -2,6 +2,7 @@ if ModOptions and ModOptions.getInstance then
     local function applyModOptions(updateData)
         local newValues = updateData.settings.options
 
+        NoropiaHotkeys.Options.openNotebookByName = newValues.openNotebookByName
         NoropiaHotkeys.Options.notebookName = newValues.notebookName
     end
 
@@ -9,6 +10,13 @@ if ModOptions and ModOptions.getInstance then
     -- https://steamcommunity.com/workshop/filedetails/discussion/2169435993/4260919351480715709/
     local SETTINGS = {
         options_data = {
+            openNotebookByName = {
+                default = true,
+                name = "Open notebook by name",
+                tooltip = "Open notebook by name, instead of first notebook found.",
+                OnApplyMainMenu = applyModOptions,
+                OnApplyInGame = applyModOptions,
+            },
             notebookName = {
                 default = "Field Notes",
                 name = "Notebook name",
