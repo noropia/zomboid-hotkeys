@@ -1,0 +1,5 @@
+name=Noropia Hotkeys
+id=NoropiaHotkeys
+description=Hotkeys for missing actions.
+poster=poster.png
+require=eggonsHotkeys
